@@ -1,19 +1,22 @@
 package interfeisai;
 
-public class Namas implements Elektra, Vent, Vanduo { //paveldeta nuo object
+public class Namas extends NamoDalis implements Elektra, Vent, Vanduo { //paveldeta nuo object
     
-    private boolean dega = false;
+    public Namas() { //jeigu nenurodziau parametru(kiek aukstu bus)
+        super(5);
+    }
+    public Namas(int aukstai) {
+        super(aukstai);
+    }
+    
+    //isjunk metodas irasytas NamoDalis klaseje, kuri paveldim
     
     @Override
     public void ijunk() {
         dega = true;
         System.out.println("sviesa name ijungta");
     }
-    @Override
-    public void isjunk() {
-        dega = false;
-        System.out.println("sviesa name isjungta");
-    }
+//isjunk metodas yra NamoDalis klaseje
     @Override
     public void pusk() {
         System.out.println("puca pucia");
@@ -37,6 +40,10 @@ public class Namas implements Elektra, Vent, Vanduo { //paveldeta nuo object
     @Override
     public void nuleisk() {
         System.out.println("nuleidziamas vanduo");
+    }
+    
+    public void uzrakintiLaiptine() {
+        System.out.println("reikalavimas kad butu metodas uzrakinti laiptine");
     }
         
 }
